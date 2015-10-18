@@ -4,7 +4,6 @@ RUN apt-get update -y
 RUN apt-get install -y weechat tor wget
 RUN wget https://github.com/conorpp/Dockerfiles/raw/master/Weechat_Tor/weechat.tar
 RUN tar xvf weechat.tar -C ~
-EXPOSE 8000
 CMD /etc/init.d/tor start && bash -c "weechat --run-command '/connect oftc'"
 
 
